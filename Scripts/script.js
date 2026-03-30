@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     const themeBtn = document.getElementById('theme-toggle');
-    
     if (themeBtn) {
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('light-theme');
@@ -12,13 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.toggle('fa-sun');
             }
             
-            // Guarda a preferência
             const isLight = document.body.classList.contains('light-theme');
             localStorage.setItem('theme', isLight ? 'light' : 'dark');
         });
     }
 
-    // Aplica o tema guardado ao carregar
     if (localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-theme');
         const icon = themeBtn?.querySelector('i');
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-//Lógica Idioma
 function changeLang(lang) {
     const elements = document.querySelectorAll('[data-pt]');
     Array.from(elements).forEach(el => {
@@ -36,7 +32,6 @@ function changeLang(lang) {
         if (text) el.textContent = text;
     });
 
-    //Troca o PDF
     const cvLink = document.getElementById('cv-link');
     if(cvLink) {
         const novoLink = cvLink.getAttribute(`data-${lang}-link`);
