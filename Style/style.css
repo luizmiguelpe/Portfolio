@@ -1,0 +1,212 @@
+/* =========================================
+   1. VARIÁVEIS (DESIGN SYSTEM)
+   ========================================= */
+:root {
+    --neon-green: #00ff88;
+    --neon-green-hover: #05e67d;
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --light-bg: #f8f9fa;
+    --light-card: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* =========================================
+   2. RESET E GERAL
+   ========================================= */
+body {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: var(--transition);
+    min-height: 100vh;
+}
+
+main {
+    min-height: 75vh;
+}
+
+/* =========================================
+   3. COMPONENTES CUSTOMIZADOS
+   ========================================= */
+
+.bg-dark-custom {
+    background-color: var(--dark-card) !important;
+}
+
+.text-neon {
+    color: var(--neon-green) !important;
+}
+
+.btn-neon {
+    background-color: var(--neon-green);
+    color: #000 !important;
+    font-weight: 600;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-neon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+    background-color: var(--neon-green-hover);
+}
+
+.foto-perfil img {
+    border: 3px solid var(--neon-green);
+    transition: var(--transition);
+}
+
+.foto-perfil img:hover {
+    transform: scale(1.05);
+}
+
+.lang-switcher-custom {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-switcher-custom button {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.lang-switcher-custom button.active {
+    background-color: var(--neon-green);
+    color: #000;
+}
+
+.btn-icon-custom {
+    background: none;
+    border: none;
+    color: var(--neon-green);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.skill-card {
+    background-color: var(--dark-card);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-green) !important;
+}
+
+/* =========================================
+   4. MODO LIGHT 
+   ========================================= */
+body.light-theme {
+    background-color: var(--light-bg) !important;
+    color: #212529 !important;
+}
+
+body.light-theme .bg-dark-custom,
+body.light-theme .skill-card,
+body.light-theme .bg-dark-custom {
+    background-color: var(--light-card) !important;
+    color: #212529 !important;
+    border-color: #dee2e6 !important;
+}
+
+body.light-theme .text-white,
+body.light-theme .lead {
+    color: #212529 !important;
+}
+
+body.light-theme .text-secondary {
+    color: #6c757d !important;
+}
+
+body.light-theme .nav-link {
+    color: #444 !important;
+}
+
+body.light-theme .nav-link.active,
+body.light-theme .nav-link:hover {
+    color: #008f51 !important;
+}
+
+body.light-theme .lang-switcher-custom {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme footer {
+    border-top: 1px solid #dee2e6;
+}
+
+footer a:hover {
+    color: var(--neon-green) !important;
+}
+
+/* =========================================
+   COMPONENTES: CARDS COM OVERLAY
+   ========================================= */
+
+.project-card-link {
+    display: block; 
+    transition: var(--transition); 
+}
+
+.project-overlay-card {
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.project-overlay-card .card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.9); 
+    opacity: 0; 
+    transition: opacity 0.4s ease, backdrop-filter 0.3s ease; 
+    border-radius: inherit; 
+}
+
+/* --- EFEITOS HOVER --- */
+
+.project-card-link:hover .project-overlay-card {
+    transform: scale(1.03) translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.25); 
+    border-color: var(--neon-green) !important; 
+}
+
+.project-card-link:hover .project-overlay-card .card-img-overlay {
+    opacity: 1; 
+}
+
+.project-card-link:hover .project-overlay-card img {
+    transform: scale(1.05);
+}
+
+.project-overlay-card img {
+    transition: transform 0.5s ease;
+}
+
+/* =========================================
+   6. RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: inherit;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+}
