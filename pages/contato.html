@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Luiz Miguel</title>
+    <link rel="stylesheet" href="../Style/style.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body class="bg-dark text-white">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom sticky-top border-bottom border-secondary">
+            <div class="container-fluid px-lg-5">
+                
+                <div class="d-flex flex-column align-items-start">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="foto-perfil-nav">
+                            <img src="../img/Foto de perfil.jpg" alt="Luiz Miguel" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #00ff88;">
+                        </div>
+                        <a class="navbar-brand fw-bold text-neon m-0" href="../index.html" data-pt="Meu Portfólio" data-en="My Portfolio">Meu Portfólio</a>
+                    </div>
+                    
+                    <div class="settings d-flex align-items-center gap-2 mt-1">
+                        <button id="theme-toggle" class="btn-icon-custom" title="Trocar Tema">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <div class="lang-switcher-custom">
+                            <button class="active" onclick="changeLang('pt')">PT</button>
+                            <button onclick="changeLang('en')">EN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav gap-lg-3 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html" data-pt="Inicio" data-en="Home">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./sobre.html" data-pt="Sobre" data-en="About">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./projetos.html" data-pt="Projetos" data-en="Projects">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./contato.html" data-pt="Contato" data-en="Contact">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+        <section class="w-100" style="max-width: 600px;">
+            <h1 class="display-5 fw-bold mb-2 text-center"
+                data-pt="Entre em Contato"
+                data-en="Get in Touch">
+                Entre em Contato
+            </h1>
+            <p class="text-secondary text-center mb-5"
+               data-pt="Preencha o formulário abaixo e entrarei em contacto o mais breve possível."
+               data-en="Fill in the form below and I will get back to you as soon as possible.">
+               Preencha o formulário abaixo e entrarei em contacto o mais breve possível.
+            </p>
+
+            <form id="contact-form">
+                <div class="mb-3">
+                    <input 
+                        type="text" 
+                        name="from_name" 
+                        id="from_name" 
+                        class="form-control bg-dark text-white border-secondary" 
+                        placeholder="O teu nome"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <input 
+                        type="email" 
+                        name="user_email" 
+                        id="user_email" 
+                        class="form-control bg-dark text-white border-secondary" 
+                        placeholder="O teu e-mail"
+                        required
+                    >
+                </div>
+
+                <div class="mb-4">
+                    <textarea 
+                        name="message" 
+                        id="message" 
+                        class="form-control bg-dark text-white border-secondary" 
+                        placeholder="Como posso ajudar?" 
+                        rows="5" 
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" id="button-send" class="btn btn-neon btn-lg px-5 py-3 fw-bold"
+                            data-pt="Enviar Mensagem"
+                            data-en="Send Message">
+                        Enviar Mensagem
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+<footer class="py-5 bg-black text-center mt-5">
+        <div class="container">
+            <div class="social-links mb-3 d-flex justify-content-center gap-4">
+                <a href="https://github.com/luizmiguelpe" target="_blank" class="text-white fs-2">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/luizmiguelpereira" target="_blank" class="text-white fs-2">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="../img/CV_PT_LuizMiguel.pdf" id="cv-link" target="_blank" 
+                   data-pt-link="../img/CV_PT_LuizMiguel.pdf" 
+                   data-en-link="../img/CV_IN_LuizMiguel.pdf" title="Ver Currículo"
+                   class="text-white fs-2">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+            </div>
+            <p class="text-secondary mb-0">&copy; 2026 - Desenvolvido por Luiz Miguel Tavares Pereira</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/script.js"></script>
+</body>
+</html>

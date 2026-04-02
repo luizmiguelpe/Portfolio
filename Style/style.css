@@ -39,9 +39,11 @@ main {
 }
 
 .btn-neon {
-    background-color: var(--neon-green);
+    background-color: var(--neon-green) !important;
     color: #000 !important;
     font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
     border: none;
     transition: var(--transition);
 }
@@ -102,6 +104,16 @@ main {
 .skill-card:hover {
     transform: translateY(-8px);
     border-color: var(--neon-green) !important;
+}
+
+/* Placeholder visível nos inputs escuros */
+.form-control::placeholder {
+    color: #888 !important;
+    opacity: 1;
+}
+
+.form-control {
+    color: #ffffff !important;
 }
 
 /* =========================================
