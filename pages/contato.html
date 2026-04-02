@@ -17,7 +17,7 @@
                 <div class="d-flex flex-column align-items-start">
                     <div class="d-flex align-items-center gap-2">
                         <div class="foto-perfil-nav">
-                            <img src="../img/Foto de perfil.jpg" alt="Luiz Miguel" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #00ff88;">
+                            <img src="https://luizmiguelpe.github.io/Portfolio/img/Foto de perfil.jpg" alt="Luiz Miguel" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #00ff88;">
                         </div>
                         <a class="navbar-brand fw-bold text-neon m-0" href="../index.html" data-pt="Meu Portfólio" data-en="My Portfolio">Meu Portfólio</a>
                     </div>
@@ -84,11 +84,13 @@
 
                 <div class="mb-3">
                     <input 
-                        type="email" 
+                        type="text" 
                         name="user_email" 
                         id="user_email" 
                         class="form-control bg-dark text-white border-secondary" 
                         placeholder="O teu e-mail"
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                        title="Introduz um e-mail válido"
                         required
                     >
                 </div>
@@ -115,7 +117,7 @@
         </section>
     </main>
 
-<footer class="py-5 bg-black text-center mt-5">
+    <footer class="py-5 bg-black text-center mt-5">
         <div class="container">
             <div class="social-links mb-3 d-flex justify-content-center gap-4">
                 <a href="https://github.com/luizmiguelpe" target="_blank" class="text-white fs-2">

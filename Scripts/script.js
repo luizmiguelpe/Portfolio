@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- EMAILJS---
-    emailjs.init("FecsaPE0pQ4Y_J5kK"); 
+    if(typeof emailjs !== 'undefined'){
+        emailjs.init("FecsaPE0pQ4Y_J5kK");
+    }
+     
 
     // --- FORMULÁRIO ---
     const contactForm = document.getElementById('contact-form');
@@ -56,16 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
 
- // --- IDIOMA GUARDADO ---
+     // --- IDIOMA GUARDADO ---
     const savedLang = localStorage.getItem('selectedLang');
     if (savedLang) changeLang(savedLang);
+});
 
 
 // --- TROCA DE IDIOMA ---
 function changeLang(lang) {
-    const elements = document.querySelectorAll('[data-pt]');
+    const elements = document.querySelectorAll('[data-pt]:not(#cv-link)');
     Array.from(elements).forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
         if (text) el.textContent = text;
